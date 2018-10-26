@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>FFBE Hybrid Damage Calculator</title>
+        <style>
+            #controlbox {
+                display:flex;
+                flex-direction: column;
+                width: 20%;
+                margin: auto;
+                padding-left: 2%;
+                border: 1px solid black;
+                box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+            }
+
+            .LabelAndField {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 20px;
+            }
+            
+            label {
+                margin-right: 5px;
+                width: 40%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bold;
+            }
+
+            input {
+                border-radius: 2px;
+                border: 1px solid #232323;
+                height: 20px;
+                width: 10%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            button {
+                width: 200px;
+                color: #232323;
+                background: white;
+                border: 2px solid #232323;
+                border-radius: 2px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bold;
+            }
+
+            select {
+                width: 50%;
+                margin-bottom: 20px;
+                border-radius: 2px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bold;
+            }
+
+            p {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
+        <script>
+            function calculate() {
+                var targetAtk = document.getElementById("TargetAttack").value;
+                var targetMag = document.getElementById("TargetMagic").value;
+                var unitDef = document.getElementById("UnitDefense").value;
+                var unitSpr = document.getElementById("UnitSpirit").value;
+
+                result = Math.floor(Math.floor(((Math.pow(targetAtk, 2) / parseInt(unitDef) * 1.99 * 0.5) + (Math.pow(targetMag, 2) / parseInt(unitSpr)) * 1.99 * 0.5)));
+
+                document.getElementById("result").innerHTML = result + " mana will be drained from the unit.";
+            }
+
+            function checkPreselectValue(value) {
+                switch(value) {
+                    case "Hasiko": 
+                        document.getElementById("TargetAttack").value = 350;
+                        document.getElementById("TargetMagic").value = 250; 
+                        break;
+                    case "Great Vampire Lord":
+                        document.getElementById("TargetAttack").value = 480;
+                        document.getElementById("TargetMagic").value = 435;
+                        break;
+                    case "default":
+                        document.getElementById("TargetAttack").value = null;
+                        document.getElementById("TargetMagic").value = null;
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="controlbox">
+            <h3>Preselect or manually enter values:</h3>
+            <select id="preselects" onchange="checkPreselectValue(this.value)">
+                <option value="default">Default</option>
+                <option value="Hasiko">Hasiko</option>
+                <option value="Great Vampire Lord">Great Vampire Lord</option>
+            </select>
+            <div id="targetDefLabelAndField" class="LabelAndField">
+                <label for="TargetAttack">Target Attack</label>
+                <input id="TargetAttack" type="textfield"/>
+            </div>
+            <div id="targetSprLabelAndField" class="LabelAndField">
+                <label for="TargetMagic">Target Magic</label>
+                <input id="TargetMagic" type="textfield"/>
+            </div>
+            <div id="unitDefLabelAndField" class="LabelAndField">
+                <label for="UnitDefense">Unit Defense</label>
+                <input id="UnitDefense" type="textfield"/>
+            </div>
+            <div id="unitSprLabelAndField" class="LabelAndField">
+                <label for="UnitSpirit">Unit Spirit</label>
+                <input id="UnitSpirit" type="textfield"/>
+            </div>
+            <button type="submit" onclick="calculate()">Calculate</button>
+            <p id="result"></p>
+        </div>      
+    </body>
+</html>
