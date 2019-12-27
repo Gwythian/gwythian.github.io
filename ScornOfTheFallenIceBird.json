@@ -1,0 +1,165 @@
+{
+    "$bossprofiler": "Scorn of the Fallen Ice Bird",
+    "boss": {
+        "properties":[
+            {
+                "id":"scornOfTheFallenIceBird",
+                "name": "Scorn of the Fallen Ice Bird",
+                "race": {
+                    "raceOne": "avian",
+                    "raceTwo": "fairy"
+                },
+                "level": "99",
+                "hp": "145,555,555",
+                "mp": "100,0000",
+                "atk": "1,600",
+                "def": "850 + 595",
+                "mag": "1,500",
+                "spr": "865 + 606",
+                "fireResistance": "0",
+                "iceResistance": "absorb",
+                "lightningResistance": "-30%",
+                "waterResistance": "absorb",
+                "windResistance": "absorb",
+                "earthResistance": "0",
+                "lightResistance": "0",
+                "darkResistance": "0",
+                "poison": false,
+                "blind": false,
+                "sleep": false,
+                "silence": false,
+                "paralyze": false,
+                "confuse": false,
+                "disease": false,
+                "petrify": false,
+                "death": false,
+                "charm": false,
+                "nonelementalDamage": false,
+                "ATKBreak": false,
+                "MAGBreak": false,
+                "DEFBreak": true,
+                "SPRBreak": true
+            }
+        ],
+        "abilities": [
+            {
+                "abilitName":"Wings of the Ice Bird",
+                "damageType": "physical",
+                "target": "AoE",
+                "multiplier": "2.7",
+                "defenseReduction:": "40%",
+                "spiritReduction:": "40%",
+                "turnDuration": "3"
+            },
+            {
+                "abilityName":"Hail Powder",
+                "damageType": "physicalFixed",
+                "target": "AoE",
+                "multiplier": "2.3",
+                "elements": {
+                    "elementOne": "ice",
+                    "elementTwo": "water",
+                    "elementThree": "wind"
+                },
+                "iceReduction": "50%",
+                "waterReduction": "50%",
+                "windReduction": "50%",
+                "turnDuration": "3"
+            },
+            {
+                "abilityName": "Crystal Laser(1)",
+                "damageType": "magic",
+                "target": "ST",
+                "multiplier": "1.85"
+            },
+            {
+                "abilityName": "Frozen Laser(1)",
+                "damageType": "magic",
+                "target": "ST",
+                "multiplier": "2.2",
+                "elements": {
+                    "elementOne": "ice"
+                }
+            },
+            {
+                "abilityName": "Water Laser(1)",
+                "damageType": "magic",
+                "target": "ST",
+                "multiplier": "2.2",
+                "elements": {
+                    "elementOne": "water"
+                }
+            },
+            {
+                "abilityName": "Wind Laser(1)",
+                "damageType": "magic",
+                "target": "ST",
+                "multiplier": "2.2",
+                "elements": {
+                    "elementOne": "wind"
+                }
+            },
+            {
+                "abilityName": "Blizzaga",
+                "damageType": "magic",
+                "target": "AoE",
+                "multiplier": "3.5",
+                "elements": {
+                    "elementOne": "ice"
+                }
+            },
+            {
+                "abilityName": "Waterga",
+                "damageType": "magic",
+                "target": "AoE",
+                "multiplier": "3.5",
+                "elements": {
+                    "elementOne": "water"
+                }
+            },
+            {
+                "abilityName": "Aeroga",
+                "damageType": "magic",
+                "target": "AoE",
+                "multiplier": "2.2",
+                "elements": {
+                    "elementOne": "wind"
+                }
+            },
+            {
+                "abilityName": "Frozen Hurricane",
+                "damageType": "magic",
+                "target": "AoE",
+                "multiplier": "4.5",
+                "elements": {
+                    "elementOne": "wind",
+                    "elementTwo": "ice"
+                },
+                "stop": "30%",
+                "iceReduction": "50%",
+                "windReduction": "50%",
+                "turnDuration": "3"
+            },
+            {
+                "abilityName": "Blizzard Hurricane",
+                "damageType": "fixed-magic",
+                "target": "AoE",
+                "multiplier": "5.5",
+                "elements": {
+                    "elementOne": "wind",
+                    "elementTwo": "ice"
+                },
+                "stop": "80%",
+                "iceReduction": "100%",
+                "windReduction": "100%",
+                "turnDuration": "3"
+            },
+            {
+                "abilityName": "Diffusion Laser",
+                "damageType": "fixed-magic",
+                "target": "AoE",
+                "multiplier": "0.9"
+            }
+        ]
+    }
+}
